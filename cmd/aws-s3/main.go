@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path"
+	"path/filepath"
 	"strings"
 	"time"
 )
@@ -181,6 +182,11 @@ func cmdDownload(ctx context.Context, client *S3Client, bucket string, keys []st
 				return fmt.Errorf("error opening object: %v", err)
 			}
 			defer r.Close()
+
+			dir := filepath.Dir(key)
+			if err := os.MkdirAll(dir, 0755); err != nil {
+				return fmt.Errorf("error creating directory (%s): %v", dir, err)
+			}
 
 			f, err := os.Create(key)
 			if err != nil {
