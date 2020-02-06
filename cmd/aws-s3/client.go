@@ -62,8 +62,9 @@ func (c *S3Client) List(ctx context.Context, bucket, prefix string) ([]string, e
 	var keys []string
 
 	loi := &awss3.ListObjectsInput{
-		Prefix: aws.String(prefix),
-		Bucket: aws.String(bucket),
+		Prefix:  aws.String(prefix),
+		Bucket:  aws.String(bucket),
+		MaxKeys: aws.Int64(100000),
 	}
 
 	for {
