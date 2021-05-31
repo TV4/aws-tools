@@ -9,7 +9,7 @@
 
 ## Installation
 ```
-go get -u github.com/TV4/aws-tools/cmd/aws-s3
+go install github.com/TV4/aws-tools/cmd/aws-s3@latest
 ```
 
 ## Usage
