@@ -11,7 +11,7 @@ This is a small set of command-line tools for interacting with
 * [cmd/aws-s3](cmd/aws-s3) reads and writes from/to Simple Storage Service
 
 ## License
-Copyright (c) 2020 TV4
+Copyright (c) 2020-2021 TV4
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
